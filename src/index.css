@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #ddfff7;
+  font-size: 100%;
+  text-align: center;
+}
+
+#quote__header,
+#quote__text,
+#quote__author {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+
+#quote__header {
+  color: #aa4465;
+  font-size: 4em;
+  font-weight: normal;
+  margin-bottom: .375em;
+}
+
+#quote__text,
+#quote__author {
+  color: #4f6d7a;
+  font-size: 2em;
+}
+
+#quote__container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#quote__start,
+#quote__end {
+  max-width: 9em;
+  position: absolute;
+  z-index: -1;
+}
+
+#quote__start {
+  left: -3.5em;
+  top: -2.5em;
+}
+
+#quote__end {
+  right: -3.5em;
+  bottom: -2.5em;
+}
+
+#quote__text,
+#quote__text p {
+  font-style: italic;
+  z-index: 10;
+}
+
+#quote__text p {
+  margin: .5em 0;
+}
+
+#button__container {
+  text-align: center;
+  margin-top: 1.75em;
+}
+
+#button__new,
+#button__tweet {
+  display: inline-block;
+  color: #aa4465;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: "Muli", sans-serif;
+  font-size: 1.25em;
+  border: 1.5px solid #aa4465;
+  border-radius: 5em;
+  padding: .5em 1.75em;
+  margin: .5em .75em;
+}
+
+#twitter__icon {
+  display: inline-block;
+  float: left;
+}
