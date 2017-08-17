@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import jsonpP from "jsonp-p";
 
 import quoteImgOpen from "../quote-open.svg";
 import quoteImgClose from "../quote-close.svg";
@@ -15,11 +16,14 @@ class App extends Component {
   }
 
   generateQuote = async () => {
-    const quote = await axios(
-      "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=quote"
-    );
-    console.log(quote.data);
-    this.setState({ quote: quote.data });
+    const quoteData = await jsonpP(
+      "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=2&_jsonp=jsonp",
+      { name: "jsonp" }
+    ).promise;
+    console.log(await quoteData[0]);
+    const quote = await quoteData[0].content.replace(/<\/?[^>]+(>|$)/g, "");
+    const author = await quoteData[0].title;
+    this.setState({ quote, author });
   };
 
   render() {
